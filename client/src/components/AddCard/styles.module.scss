@@ -1,0 +1,18 @@
+.container {
+  width: 70%;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #42506466;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  > p {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+  }
+}

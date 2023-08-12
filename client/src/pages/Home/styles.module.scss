@@ -1,0 +1,77 @@
+#kanban {
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: #969696;
+  background-color: #3a3a3a;
+  width: calc(100vw - 50px - 50px - 15px - 15px);
+  height: calc(100vh - 50px - 50px - 15px - 15px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+@mixin board_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-bottom: 5px solid #969696;
+  margin-top: 30px;
+  height: calc(100% - 30px);
+}
+
+#board_title_1 {
+  @include board_title;
+  border-right: 5px solid #969696;
+  margin-left: 50px;
+  width: calc(100% - 50px);
+}
+
+#board_title_2 {
+  @include board_title;
+  border-right: 5px solid #969696;
+}
+
+#board_title_3 {
+  @include board_title;
+  margin-right: 50px;
+  width: calc(100% - 50px);
+}
+
+@mixin board_cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+  height: calc(100% - 30px);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+#board_cell_1 {
+  @include board_cell;
+  border-right: 5px solid #969696;
+  width: 100%;
+}
+
+#board_cell_2 {
+  @include board_cell;
+  border-right: 5px solid #969696;
+}
+
+#board_cell_3 {
+  @include board_cell;
+  width: 100%;
+}

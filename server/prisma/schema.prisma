@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Activity {
+  id          Int      @id @default(autoincrement()) @db.UnsignedInt
+  title       String   @db.VarChar(100)
+  description String   @db.Text
+  date        DateTime @db.DateTime(6)
+  user        String   @db.VarChar(50)
+  type        Type
+}
+
+enum Type {
+  Todo
+  Done
+  Doing
+}
